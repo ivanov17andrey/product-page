@@ -1,0 +1,19 @@
+@mixin btn($size) {
+	@if $size == large {
+		width: 260px;
+	}
+	@if $size == small {
+		width: 145px;
+	}
+	@if $size == smallest {
+		width: 117px;
+	}
+	font-weight: bold;
+	line-height: 16px;
+	height: 40px;
+	left: 0px;
+	top: 356px;
+	background: #f1bd45;
+	border-radius: 3px;
+	border: none;
+}

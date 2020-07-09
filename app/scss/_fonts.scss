@@ -1,0 +1,10 @@
+@mixin font($fname, $fstyle, $fweight, $furl) {
+	@font-face {
+		font-family: $fname;
+		font-style: $fstyle;
+		font-weight: $fweight;
+		src: local($fname), url($furl) format('woff2');
+	}
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
