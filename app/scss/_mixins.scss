@@ -1,19 +1,25 @@
 @mixin btn($size) {
-	@if $size == large {
+	@if $size == l {
 		width: 260px;
 	}
-	@if $size == small {
+	@if $size == m {
 		width: 145px;
 	}
-	@if $size == smallest {
+	@if $size == s {
 		width: 117px;
 	}
+	font-size: 14px;
 	font-weight: bold;
 	line-height: 16px;
 	height: 40px;
-	left: 0px;
-	top: 356px;
-	background: #f1bd45;
+	transition: transform 0.3s ease, background-position-x 0.7s ease;
+	background: linear-gradient(135deg, rgba(241,189,69,1) 0%, rgba(241,189,69,1) 5%, rgba(255,255,255,1) 10%, rgba(241,189,69,1) 15%, rgba(241,189,69,1) 100%);
+	background-size: 500%;
+	background-position-x: 40%;
 	border-radius: 3px;
 	border: none;
+	&:hover {
+		background-position-x: -50%;
+		transform: scale(1.05);
+	}
 }

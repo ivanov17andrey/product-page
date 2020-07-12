@@ -1,0 +1,208 @@
+@media (max-width: 1199px) {
+	.return__grid {
+		justify-content: start;
+	}
+	.card {
+		margin-right: 44px;
+	}
+	.search-form {
+		padding-right: 0;
+	}
+}
+@media (max-width: 1029px) {
+	.main {
+		max-width: 1029px;
+	}
+	.return__grid {
+		justify-content: space-between;
+	}
+	.card {
+		margin-right: 0;
+	}
+	.aside {
+		position: absolute;
+		max-width: 301px;
+		padding-right: 10px;
+		margin: 0;
+		flex: 0 0 291px;
+		top: 95px;
+		left: -331px;
+		background: #fff;
+		border: 1px solid $light-grey;
+		border-left: none;
+		border-radius: 0 0 10px 0;
+		box-shadow: 10px -10px 20px 0 rgba(0, 0, 0, 0.05), 10px 10px 20px 0 rgba(0, 0, 0, 0.05);
+		padding-left: 10px;
+		transition: all 1s;
+		z-index: 1;
+		&__button {
+			display: block;
+		}
+	}
+	.price__input {
+		width: 105px;
+	}
+}
+@media (max-width: 842px) {
+	.card {
+		margin-right: 44px;
+	}
+	.return__grid {
+		justify-content: flex-start;
+	}
+}
+@media (max-width: 425px) {
+	.header {
+		margin-bottom: $m-b-mob;
+	}
+	.search-form {
+		padding: 0;
+		margin-bottom: $m-b-mob;
+		&__search-box {
+			border-right: 1px solid $light-grey;
+			border-radius: 5px;
+			padding: 0 10px;
+		}
+		&__img-wrapper {
+		}
+		&__loupe {
+			margin-left: 0;
+		}
+		&__input {
+			width: 100%;
+		}
+		&__delete {
+		}
+		&__search-button {
+			display: none;
+		}
+		&__close-button {
+			display: none;
+		}
+	}
+	.result {
+		&__header {
+			margin-bottom: $m-b-mob;
+		}
+		&__title {
+			font-size: 22px;
+			height: auto;
+		}
+		&__info {
+			font-size: 10px;
+			height: auto;
+		}
+		&__slider {
+			margin-bottom: calc(#{$m-b-mob} - 4px);
+			&::after {
+				width: 70px;
+			}
+		}
+	}
+	.grid {
+		position: static;
+		flex-flow: row wrap;
+		&__filters {
+			display: block;
+		}
+	}
+	.aside {
+		opacity: 0;
+		visibility: hidden;
+		box-shadow: none;
+		border-radius: 0;
+		border: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		padding: 10px 20px;
+		max-width: none;
+		width: 100%;
+		height: 100vh;
+		overflow-y: scroll;
+		transition: all 0.5s;
+		&__button {
+			// display: none;
+			position: relative;
+			top: auto;
+			left: auto;
+			right: auto;
+			bottom: auto;
+			width: 100%;
+			height: 40px;
+			border: none;
+			padding: 0;
+			border-radius: 5px;
+			background: $yellow;
+			&::after {
+				content: "Применить";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+		&__arrow {
+			display: none;
+		}
+		&--modal {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	.price__input {
+		width: 90px;
+	}
+	.price__range-wrapper {
+		width: 255px;
+	}
+	.sort {
+		flex-flow: row wrap;
+		padding-left: 0;
+		justify-content: center;
+		&__by {
+			display: block;
+		}
+		&__show-box {
+			margin: 0;
+		}
+		&__list {
+			display: none;
+		}
+		&__select {
+			position: relative;
+			select {
+				width: 30px;
+				padding: 0 10px 0 0;
+				border: none;
+				appearance: none;
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				top: calc(50% - 3px);
+				right: 5px;
+				border: solid black;
+				border-width: 0 1px 1px 0;
+				display: inline-block;
+				padding: 2px;
+				transform: rotate(45deg);
+				transition: all 1s;
+			}
+		}
+	}
+	.tags {
+		&::after {
+			width: 70px;
+		}
+	}
+	.return {
+		&__grid {
+			justify-content: center;
+		}
+	}
+	.card {
+		margin: 0 0 20px 0;
+	}
+}

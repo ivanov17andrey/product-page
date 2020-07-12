@@ -1,6 +1,7 @@
 @import 'fonts';
 @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
 @import 'node_modules/slick-carousel/slick/slick.scss';
+@import 'node_modules/nouislider/distribute/nouislider';
 // @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'; // Bootstrap Breakpoints mixin
 // @import 'node_modules/bootstrap/scss/bootstrap-grid.scss'; // Optional Bootstrap Grid
 // @import 'node_modules/bootstrap/scss/utilities/_sizing.scss'; // Optional Bootstrap Utilites
@@ -18,6 +19,8 @@ $light-yellow: #FFF3D8;
 $grey: #C4C4C4;
 $light-grey: #C7C7C7;
 $blue: #5375B7;
+
+$m-b-mob: 16px;
 
 
 
@@ -43,6 +46,7 @@ label,
 figure {
 	margin-bottom: 0;
 }
+a,
 input,
 button {
 	&:focus {
@@ -60,6 +64,10 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+* {
+	outline: none;
 }
 
 /* Firefox */

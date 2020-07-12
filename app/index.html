@@ -16,7 +16,7 @@
 <body>
 
 	<header class="header">
-		<div class="container">
+		<div class="header__container container">
 			<div class="header__content">Шапка сайта</div>
 		</div>
 	</header>
@@ -27,9 +27,10 @@
 				<div class="search-form__img-wrapper">
 					<img class="search-form__loupe" src="images/dest/loupe.svg" alt="loupe">
 				</div>
-				<input class="search-form__input" type="search" name="search" placeholder="Запрос пользователя">
+				<input class="search-form__input" id="search-input" type="search" name="search"
+					placeholder="Запрос пользователя">
 				<!-- onkeydown="this.style.width = ((this.value.length + 1) * 6) + 'px';" -->
-				<button class="search-form__delete"></button>
+				<a class="search-form__delete"></a>
 			</div>
 			<input class="search-form__search-button" type="submit" value="Найти">
 			<input class="search-form__close-button" type="button" value="Закрыть">
@@ -41,8 +42,8 @@
 				</h2>
 			</div>
 			<div class="result__slider slider">
-				<div>
-					<div class="slider-item">
+				<a class="slider__link" href="#">
+					<div class="slider__slider-item slider-item">
 						<div class="slider-item__aside">
 							<figure class="slider-item__figure">
 								<img class="slider-item__image" src=""></img>
@@ -55,9 +56,9 @@
 							</p>
 						</div>
 					</div>
-				</div>
-				<div>
-					<div class="slider-item">
+				</a>
+				<a class="slider__link" href="#">
+					<div class="slider__slider-item slider-item">
 						<div class="slider-item__aside">
 							<figure class="slider-item__figure">
 								<img class="slider-item__image" src=""></img>
@@ -70,9 +71,9 @@
 							</p>
 						</div>
 					</div>
-				</div>
-				<div>
-					<div class="slider-item">
+				</a>
+				<a class="slider__link" href="#">
+					<div class="slider__slider-item slider-item">
 						<div class="slider-item__aside">
 							<figure class="slider-item__figure">
 								<img class="slider-item__image" src=""></img>
@@ -85,9 +86,9 @@
 							</p>
 						</div>
 					</div>
-				</div>
-				<div>
-					<div class="slider-item">
+				</a>
+				<a class="slider__link" href="#">
+					<div class="slider__slider-item slider-item">
 						<div class="slider-item__aside">
 							<figure class="slider-item__figure">
 								<img class="slider-item__image" src=""></img>
@@ -100,9 +101,9 @@
 							</p>
 						</div>
 					</div>
-				</div>
-				<div>
-					<div class="slider-item">
+				</a>
+				<a class="slider__link" href="#">
+					<div class="slider__slider-item slider-item">
 						<div class="slider-item__aside">
 							<figure class="slider-item__figure">
 								<img class="slider-item__image" src=""></img>
@@ -115,9 +116,9 @@
 							</p>
 						</div>
 					</div>
-				</div>
-				<div>
-					<div class="slider-item">
+				</a>
+				<a class="slider__link" href="#">
+					<div class="slider__slider-item slider-item">
 						<div class="slider-item__aside">
 							<figure class="slider-item__figure">
 								<img class="slider-item__image" src=""></img>
@@ -130,9 +131,40 @@
 							</p>
 						</div>
 					</div>
-				</div>
+				</a>
+				<a class="slider__link" href="#">
+					<div class="slider__slider-item slider-item">
+						<div class="slider-item__aside">
+							<figure class="slider-item__figure">
+								<img class="slider-item__image" src=""></img>
+							</figure>
+						</div>
+						<div class="slider-item__body">
+							<h3 class="slider-item__title">Название категории</h3>
+							<p class="slider-item__descr">
+								<span>134</span> товара
+							</p>
+						</div>
+					</div>
+				</a>
+				<a class="slider__link" href="#">
+					<div class="slider__slider-item slider-item">
+						<div class="slider-item__aside">
+							<figure class="slider-item__figure">
+								<img class="slider-item__image" src=""></img>
+							</figure>
+						</div>
+						<div class="slider-item__body">
+							<h3 class="slider-item__title">Название категории</h3>
+							<p class="slider-item__descr">
+								<span>134</span> товара
+							</p>
+						</div>
+					</div>
+				</a>
 			</div>
 			<section class="grid">
+				<div class="grid__filters" id="show-filters">Фильтры</div>
 				<aside class="aside">
 					<section class="aside__categories categories">
 						<h2 class="categories__header">Все категории</h2>
@@ -160,13 +192,13 @@
 						<h2 class="price__header">Цена, валюта</h2>
 						<div class="price__input-wrapper">
 							<span>от</span>
-							<input class="price__input" type="number">
+							<input class="price__input" id="low-range" type="text">
 							<span>до</span>
-							<input class="price__input" type="number">
+							<input class="price__input" id="high-range" type="text">
 							<span>р</span>
 						</div>
 						<div class="price__range-wrapper">
-							<input class="price__range" type="range">
+							<div class="price__range-input" id="range"></div>
 						</div>
 					</section>
 					<section class="aside__brands brands">
@@ -178,22 +210,32 @@
 							<ul class="brands__list">
 								<li class="brands__item">
 									<input class="brands__checkbox" type="checkbox" name="" id="checkbox-1">
-									<label for="checkbox-1"> Бренд <span>(ххх)</span></label>
+									<label for="checkbox-1"> Бренд <span class="mask">(12349888)</span></label>
 								</li>
 								<li class="brands__item">
 									<input class="brands__checkbox" type="checkbox" name="" id="checkbox-2">
-									<label for="checkbox-2"> Бренд <span>(ххх)</span></label>
+									<label for="checkbox-2"> Бренд <span class="mask">(2414)</span></label>
 								</li>
 								<li class="brands__item">
 									<input class="brands__checkbox" type="checkbox" name="" id="checkbox-3">
-									<label for="checkbox-3"> Бренд <span>(ххх)</span></label>
+									<label for="checkbox-3"> Бренд <span class="mask">(99999)</span></label>
 								</li>
 							</ul>
 						</form>
 					</section>
+					<div class="aside__button" id="arrow">
+						<div class="aside__arrow"></div>
+					</div>
 				</aside>
 				<main class="main">
 					<section class="main__sort sort">
+						<div class="sort__by">
+							<select name="" id="">
+								<option value="">по популярности</option>
+								<option value="">сначала дешевые</option>
+								<option value="">сначала дорогие</option>
+							</select>
+						</div>
 						<ul class="sort__list">
 							<li class="sort__item">Сортировать по:</li>
 							<li class="sort__item sort__item--active">популярности</li>
@@ -201,19 +243,29 @@
 							<li class="sort__item">сначала дорогие</li>
 						</ul>
 						<div class="sort__show-box">
-							<span>показывать по</span>
-							<select class="sort__select" name="" id="">
-								<option value="24">24</option>
-								<option value="24">36</option>
-								<option value="24">48</option>
-							</select>
+							<label for="count-select">показывать по</label>
+							<div class="sort__select">
+								<select name="" id="count-select">
+									<option value="24">24</option>
+									<option value="24">36</option>
+									<option value="24">48</option>
+								</select>
+							</div>
 						</div>
 					</section>
 					<section class="main__tags tags">
-						<div class="tags__item">Уточнение</div>
-						<div class="tags__item">Уточнение</div>
-						<div class="tags__item">Уточнение</div>
-						<div class="tags__item">Уточнение</div>
+						<div>
+							<div class="tags__item"><a href="">Уточнение</a></div>
+						</div>
+						<div>
+							<div class="tags__item"><a href="">Уточнение</a></div>
+						</div>
+						<div>
+							<div class="tags__item"><a href="">Уточнение</a></div>
+						</div>
+						<div>
+							<div class="tags__item"><a href="">Уточнение</a></div>
+						</div>
 					</section>
 					<section class="main__return return">
 						<div class="return__grid">
@@ -227,8 +279,8 @@
 									<h3 class="card__title">Наименование товара, которое не более 2 строк
 									</h3>
 									<div class="card__desc">
-										<div class="card__price">ХХ ХХХ , $</div>
-										<div class="card__old-price">ХХ ХХХ $</div>
+										<div class="card__price mask">12839 , $</div>
+										<div class="card__old-price mask">99999 $</div>
 									</div>
 								</div>
 								<div class="card__footer">
@@ -247,8 +299,8 @@
 									<h3 class="card__title">Наименование товара, которое не более 2 строк
 									</h3>
 									<div class="card__desc">
-										<div class="card__price">ХХ ХХХ , $</div>
-										<div class="card__old-price">ХХ ХХХ $</div>
+										<div class="card__price mask">ХХ ХХХ , $</div>
+										<div class="card__old-price mask">ХХ ХХХ $</div>
 									</div>
 								</div>
 								<div class="card__footer">
@@ -267,8 +319,8 @@
 									<h3 class="card__title">Наименование товара, которое не более 2 строк
 									</h3>
 									<div class="card__desc">
-										<div class="card__price">ХХ ХХХ , $</div>
-										<div class="card__old-price">ХХ ХХХ $</div>
+										<div class="card__price mask">ХХ ХХХ , $</div>
+										<div class="card__old-price mask">ХХ ХХХ $</div>
 									</div>
 								</div>
 								<div class="card__footer">
@@ -287,8 +339,8 @@
 									<h3 class="card__title">Наименование товара, которое не более 2 строк
 									</h3>
 									<div class="card__desc">
-										<div class="card__price">ХХ ХХХ , $</div>
-										<div class="card__old-price">ХХ ХХХ $</div>
+										<div class="card__price mask">ХХ ХХХ , $</div>
+										<div class="card__old-price mask">ХХ ХХХ $</div>
 									</div>
 								</div>
 								<div class="card__footer">
@@ -307,8 +359,8 @@
 									<h3 class="card__title">Наименование товара, которое не более 2 строк
 									</h3>
 									<div class="card__desc">
-										<div class="card__price">ХХ ХХХ , $</div>
-										<div class="card__old-price">ХХ ХХХ $</div>
+										<div class="card__price mask">ХХ ХХХ , $</div>
+										<div class="card__old-price mask">ХХ ХХХ $</div>
 									</div>
 								</div>
 								<div class="card__footer">
@@ -327,8 +379,8 @@
 									<h3 class="card__title">Наименование товара, которое не более 2 строк
 									</h3>
 									<div class="card__desc">
-										<div class="card__price">ХХ ХХХ , $</div>
-										<div class="card__old-price">ХХ ХХХ $</div>
+										<div class="card__price mask">ХХ ХХХ , $</div>
+										<div class="card__old-price mask">ХХ ХХХ $</div>
 									</div>
 								</div>
 								<div class="card__footer">
@@ -347,8 +399,8 @@
 									<h3 class="card__title">Наименование товара, которое не более 2 строк
 									</h3>
 									<div class="card__desc">
-										<div class="card__price">ХХ ХХХ , $</div>
-										<div class="card__old-price">ХХ ХХХ $</div>
+										<div class="card__price mask">ХХ ХХХ , $</div>
+										<div class="card__old-price mask">ХХ ХХХ $</div>
 									</div>
 								</div>
 								<div class="card__footer">
@@ -367,8 +419,8 @@
 									<h3 class="card__title">Наименование товара, которое не более 2 строк
 									</h3>
 									<div class="card__desc">
-										<div class="card__price">ХХ ХХХ , $</div>
-										<div class="card__old-price">ХХ ХХХ $</div>
+										<div class="card__price mask">ХХ ХХХ , $</div>
+										<div class="card__old-price mask">ХХ ХХХ $</div>
 									</div>
 								</div>
 								<div class="card__footer">
@@ -387,8 +439,8 @@
 									<h3 class="card__title">Наименование товара, которое не более 2 строк
 									</h3>
 									<div class="card__desc">
-										<div class="card__price">ХХ ХХХ , $</div>
-										<div class="card__old-price">ХХ ХХХ $</div>
+										<div class="card__price mask">ХХ ХХХ , $</div>
+										<div class="card__old-price mask">ХХ ХХХ $</div>
 									</div>
 								</div>
 								<div class="card__footer">
@@ -404,7 +456,8 @@
 								<li class="pagination__page-number pagination__page-number--active"><a href="">3</a></li>
 								<!-- <li class="pagination__page-number">...</li> -->
 								<li class="pagination__page-number"><a href="">13</a></li>
-								<li class="pagination__page-number"><a href=" "><img src="images/dest/next-page.svg" alt=""></a></li>
+								<li class="pagination__page-number"><a href=" "><img src="images/dest/next-page.svg" alt=""></a>
+								</li>
 							</ul>
 						</div>
 					</section>
